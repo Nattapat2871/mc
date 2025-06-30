@@ -1,0 +1,146 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Kanit', sans-serif; /* ฟอนต์ภาษาไทย */
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ให้วิดีโอครอบคลุมพื้นที่เต็มจอ */
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* ให้ข้อความเรียงในแนวตั้ง */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.index {
+    font-size: 70px; /* ขนาดตัวอักษร */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เงา */
+    opacity: 0; /* ซ่อนข้อความในเริ่มต้น */
+    transform: translateY(20px); /* เคลื่อนที่ลงเล็กน้อย */
+    animation: floatUp 1s forwards; /* ใช้แอนิเมชัน */
+    margin: 20px 0; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    display: block; /* ทำให้ข้อความแสดงในบรรทัดใหม่ */
+}
+
+.ip {
+    font-size: 30px; /* ขนาดตัวอักษร */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เงา */
+    opacity: 0; /* ซ่อนข้อความในเริ่มต้น */
+    transform: translateY(20px); /* เคลื่อนที่ลงเล็กน้อย */
+    animation: floatUp 4s forwards; /* ใช้แอนิเมชัน */
+    margin: 20px 0; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    display: block; /* ทำให้ข้อความแสดงในบรรทัดใหม่ */
+}
+@keyframes floatUp {
+    to {
+        opacity: 1; /* ทำให้ข้อความแสดงขึ้น */
+        transform: translateY(0); /* เคลื่อนที่ขึ้น */
+    }
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: row; /* เปลี่ยนให้ปุ่มเรียงในแนวนอน */
+    justify-content: center; /* จัดกลางปุ่มในแนวนอน */
+    gap: 30px; /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 30px; /* ระยะห่างด้านบนเพื่อแยกจากข้อความ */
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.7); /* สีพื้นหลัง */
+    color: #333; /* สีตัวอักษร */
+    padding: 15px 30px; /* ขนาดของปุ่ม */
+    border-radius: 25px; /* มุมโค้ง */
+    text-decoration: none; /* ไม่ให้มีเส้นใต้ */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    transition: all 0.3s ease; /* เพิ่มความลื่นไหลเมื่อมีการเปลี่ยนแปลง */
+}
+
+.button:hover {
+    background-color: rgb(246, 182, 227); /* สีพื้นหลังเมื่อชี้ */
+    transform: scale(1.05); /* ซูมเข้าเล็กน้อย */
+}
+
+
+
+
+
+.ip-container {
+    position: relative; /* ใช้สำหรับจัดการการจัดตำแหน่ง */
+}
+
+.ip {
+    font-size: 30px; /* ขนาดตัวอักษร */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เงา */
+    margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
+}
+
+.ip-address {
+    text-decoration: none; /* ไม่ให้มีเส้นใต้เริ่มต้น */
+    position: relative; /* ใช้สำหรับการสร้างเอฟเฟกต์ขีดเส้นใต้ */
+    transition: all 0.3s ease; /* ทำให้การเปลี่ยนแปลงนุ่มนวล */
+}
+
+.ip-address:hover {
+    text-decoration: underline; /* ขีดเส้นใต้เมื่อชี้ */
+    transform: scale(1.05); /* ซูมเข้าเล็กน้อยเมื่อชี้ */
+}
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* ป้องกันการเลื่อนหน้าตอน popup แสดง */
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* พื้นหลังสีดำพร้อมความโปร่งใส */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease; /* การจางหาย */
+    z-index: 1000; /* นำมาอยู่ด้านบนสุด */
+}
+
+.popup-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('media/load.png'); /* เปลี่ยนเป็น URL รูปภาพที่คุณต้องการ */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1001; /* ทำให้รูปอยู่ด้านบนสุด */
+}
+
+.popup.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+

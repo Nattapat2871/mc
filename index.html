@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>play minecraft with me </title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="media/icon.png">
+    <link rel="stylesheet" href="mc.css">
+</head>
+
+<body onload="changeTitle()">
+
+    <video class="background-video" autoplay muted loop>
+        <source src="media/background.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <div class="index">Minecraft Survival Server</div>
+        <div class="ip-container">
+            <div class="ip" id="ip">ip : <span class="ip-address">play.nattapat2871.online</span>&nbsp&nbsp&nbsp&nbsp&nbsp v 1.21.1  &nbsp&nbsp&nbsp
+                <span style="color: red;">🔴offline</span>
+            </div>
+            
+        </div>
+        <div class="buttons">
+            <a href="http://play.nattapat2871.online:51387/" class="button">Blue map</a>
+            <a href="https://discord.gg/zaAc5g6NuJ" class="button">Discord Server</a>
+            <a href="https://nattapat2871.online" class="button">back to main web</a>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup" onclick="hidePopup()">
+        <div class="popup-image"></div>
+    </div>
+    
+    <audio id="click-sound" src="media/BtnSound.mp3" preload="auto"></audio>
+
+    
+    <script src="mc.js"></script>
+
+</body>
+</html>
